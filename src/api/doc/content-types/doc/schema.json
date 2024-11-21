@@ -4,7 +4,7 @@
   "info": {
     "singularName": "doc",
     "pluralName": "docs",
-    "displayName": "Docs",
+    "displayName": "Doc",
     "description": ""
   },
   "options": {
@@ -22,7 +22,8 @@
           "localized": true
         }
       },
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "Content": {
       "pluginOptions": {
@@ -32,13 +33,15 @@
       },
       "type": "richtext"
     },
-    "Slug": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "string"
+    "Product": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product.product"
+    },
+    "Category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
     }
   }
 }
